@@ -10,6 +10,7 @@ uses(RefreshDatabase::class);
 
 it('can create a cv', function () {
     $user = User::factory()->create();
+
     $response = $this->actingAs($user)
         ->post(route('cvs.store'), [
             'full_name' => 'John Doe',
@@ -19,7 +20,6 @@ it('can create a cv', function () {
         ]);
 
     $response->assertStatus(302)->assertRedirect(route('cvs.index'));
-
     $this->assertDatabaseHas('cvs', [
         'user_id' => $user->id,
         'full_name' => 'John Doe',
@@ -30,10 +30,10 @@ it('can create a cv', function () {
 });
 
 it('can update a cv', function () {
-    $user = User::factory()->create();
-    $cv = Cv::factory()->create(['user_id' => $user->id]);
-    $response = $this->actingAs($user)
-        ->patch(route('cvs.update', ['cv' => $cv]), [
+    $cv = Cv::factory()->create();
+
+    $response = $this->actingAs($cv->user)
+        ->put(route('cvs.update', ['cv' => $cv]), [
             'full_name' => 'John Doe',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
@@ -41,7 +41,6 @@ it('can update a cv', function () {
         ]);
 
     $response->assertStatus(302)->assertRedirect(route('cvs.show', ['cv' => $cv]));
-
     $this->assertDatabaseHas('cvs', [
         'full_name' => 'John Doe',
         'email' => 'john@doe.com',
@@ -52,10 +51,9 @@ it('can update a cv', function () {
 
 it('can delete a cv', function () {
     Carbon::setTestNow();
-    $user = User::factory()->create();
     $cv = Cv::factory()->create();
 
-    $response = $this->actingAs($user)
+    $response = $this->actingAs($cv->user)
         ->delete(route('cvs.destroy', [$cv->id]));
 
     $response->assertStatus(302)->assertRedirect(route('cvs.index'));
@@ -78,10 +76,9 @@ it('can index cvs', function () {
 });
 
 it('can show a cv', function () {
-    $user = User::factory()->create();
-    $cv = Cv::factory()->create(['user_id' => $user->id]);
+    $cv = Cv::factory()->create();
 
-    $response = $this->actingAs($user)
+    $response = $this->actingAs($cv->user)
         ->get(route('cvs.show', [$cv->id]));
 
     $response->assertStatus(200)
