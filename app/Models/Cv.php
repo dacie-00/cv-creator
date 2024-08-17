@@ -25,4 +25,9 @@ class Cv extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function workExperiences(): HasMany
+    {
+        return $this->hasMany(CvWorkExperience::class);
+
+    }
 }

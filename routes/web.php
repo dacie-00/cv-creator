@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CvController;
+use App\Http\Controllers\CvWorkExperienceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/cvs/{cv}/edit', [CvController::class, 'edit'])->name('cvs.edit');
     Route::put('/cvs/{cv}', [CvController::class, 'update'])->name('cvs.update');
     Route::get('/cvs/{cv}', [CvController::class, 'show'])->name('cvs.show');
+
+    Route::post('cvs/{cv}/work-experience',
+        [CvWorkExperienceController::class, 'store'])
+        ->name('cvs.work-experiences.store');
+    Route::delete('cvs/{cv}/work-experiences/{work_experience}', [CvWorkExperienceController::class, 'destroy'])
+        ->name('cvs.work-experiences.destroy');
+    Route::put('cvs/{cv}/work-experiences/{work_experience}', [CvWorkExperienceController::class, 'update'])
+        ->name('cvs.work-experiences.update');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
