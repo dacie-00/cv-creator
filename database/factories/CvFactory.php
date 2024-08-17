@@ -22,7 +22,7 @@ class CvFactory extends Factory
             'full_name' => $this->faker->name(),
             'email' => $this->faker->safeEmail(),
             'phone_number' => $this->faker->phoneNumber(),
-            'location' => $this->faker->address(),
+            'address' => $this->faker->address(),
         ];
     }
 }

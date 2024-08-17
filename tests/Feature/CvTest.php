@@ -4,6 +4,9 @@ declare(strict_types=1);
 use App\Models\Cv;
 use App\Models\User;
 use Carbon\Carbon;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
 
 it('can create a cv', function () {
     $user = User::factory()->create();
@@ -12,7 +15,7 @@ it('can create a cv', function () {
             'full_name' => 'John Doe',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'location' => 'Earth',
+            'address' => 'Earth',
         ]);
 
     $response->assertStatus(302)->assertRedirect(route('cvs.index'));
@@ -22,7 +25,7 @@ it('can create a cv', function () {
         'full_name' => 'John Doe',
         'email' => 'john@doe.com',
         'phone_number' => '0123456789',
-        'location' => 'Earth',
+        'address' => 'Earth',
     ]);
 });
 
@@ -34,7 +37,7 @@ it('can update a cv', function () {
             'full_name' => 'John Doe',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',
-            'location' => 'Earth',
+            'address' => 'Earth',
         ]);
 
     $response->assertStatus(302)->assertRedirect(route('cvs.show', ['cv' => $cv]));
@@ -43,7 +46,7 @@ it('can update a cv', function () {
         'full_name' => 'John Doe',
         'email' => 'john@doe.com',
         'phone_number' => '0123456789',
-        'location' => 'Earth',
+        'address' => 'Earth',
     ]);
 });
 

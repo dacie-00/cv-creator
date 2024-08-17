@@ -25,7 +25,7 @@ class UpdateCvRequest extends FormRequest
             'full_name' => ['string'],
             'email' => ['email'],
             'phone_number' => ['string'],
-            'location' => ['string'],
+            'address' => ['string'],
         ];
     }
 }

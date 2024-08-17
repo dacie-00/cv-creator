@@ -15,6 +15,6 @@ class Cv extends Model
         'full_name',
         'email',
         'phone_number',
-        'location',
+        'address',
     ];
 }

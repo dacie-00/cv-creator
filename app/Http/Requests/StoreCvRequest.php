@@ -25,7 +25,7 @@ class StoreCvRequest extends FormRequest
             'full_name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255'],
             'phone_number' => ['required', 'string', 'max:30'],
-            'location' => ['required', 'string', 'max:255'],
+            'address' => ['required', 'string', 'max:255'],
         ];
     }
 }
