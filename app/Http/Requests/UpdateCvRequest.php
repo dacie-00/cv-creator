@@ -22,10 +22,10 @@ class UpdateCvRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'full_name' => ['string'],
-            'email' => ['email'],
-            'phone_number' => ['string'],
-            'address' => ['string'],
+            'full_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            'phone_number' => ['required', 'string', 'max:30'],
+            'address' => ['required', 'string', 'max:255'],
         ];
     }
 }
