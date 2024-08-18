@@ -64,7 +64,7 @@ it('can update work experience entry', function () {
         ->assertRedirect(route('cvs.show', $workExperience->cv));
     $this->assertDatabaseHas('cv_work_experiences', [
         'id' => $workExperience->id,
-        'cv_id' => $workExperience->user->id,
+        'cv_id' => $workExperience->cv->id,
         'company' => 'test company',
         'role' => 'tester',
         'description' => 'hello',
