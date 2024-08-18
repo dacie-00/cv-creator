@@ -19,10 +19,12 @@ class CvFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
+            'title' => $this->faker->randomElement(['My cool CV', 'Untitled', 'ajsdasjd']),
             'full_name' => $this->faker->name(),
             'email' => $this->faker->safeEmail(),
             'phone_number' => $this->faker->phoneNumber(),
             'address' => $this->faker->address(),
+            'about' => $this->faker->paragraph(5),
         ];
     }
 }

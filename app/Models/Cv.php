@@ -14,10 +14,12 @@ class Cv extends Model
     use HasFactory, SoftDeletes, HasUuids;
 
     protected $fillable = [
+        'title',
         'full_name',
         'email',
         'phone_number',
         'address',
+        'about',
     ];
 
     public function user(): BelongsTo
