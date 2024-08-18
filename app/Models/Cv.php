@@ -34,4 +34,9 @@ class Cv extends Model
     {
         return $this->hasMany(CvEducation::class);
     }
+
+    public function languages(): HasMany
+    {
+        return $this->hasMany(CvLanguage::class);
+    }
 }

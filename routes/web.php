@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\CvEducationController;
+use App\Http\Controllers\CvLanguageController;
 use App\Http\Controllers\CvWorkExperienceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,14 @@ Route::middleware('auth')->group(function () {
         ->name('cvs.educations.destroy');
     Route::put('cvs/{cv}/educations/{education}', [CvEducationController::class, 'update'])
         ->name('cvs.educations.update');
+
+    Route::post('cvs/{cv}/languages',
+        [CvLanguageController::class, 'store'])
+        ->name('cvs.languages.store');
+    Route::delete('cvs/{cv}/languages/{language}', [CvLanguageController::class, 'destroy'])
+        ->name('cvs.languages.destroy');
+    Route::put('cvs/{cv}/languages/{language}', [CvLanguageController::class, 'update'])
+        ->name('cvs.languages.update');
 });
 
 require __DIR__ . '/auth.php';
