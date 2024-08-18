@@ -19,7 +19,7 @@ class CvEducationFactory extends Factory
     {
         return [
             'cv_id' => Cv::factory(),
-            'school' => $this->faker->word(),
+            'school' => $this->faker->randomElement(['Daugavpils University', 'Latvian Academy of Culture', 'Riga Technical University']),
             'level' => $this->faker->randomElement(['Secondary', 'Higher']),
             'degree' => $this->faker->randomElement(['Bachelor', 'Master']),
             'field' => $this->faker->randomElement(['Computer Science', 'Mathematics', 'Physics']),
