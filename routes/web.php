@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CvController;
+use App\Http\Controllers\CvEducationController;
 use App\Http\Controllers\CvWorkExperienceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -28,13 +29,21 @@ Route::middleware('auth')->group(function () {
     Route::put('/cvs/{cv}', [CvController::class, 'update'])->name('cvs.update');
     Route::get('/cvs/{cv}', [CvController::class, 'show'])->name('cvs.show');
 
-    Route::post('cvs/{cv}/work-experience',
+    Route::post('cvs/{cv}/work-experiences',
         [CvWorkExperienceController::class, 'store'])
         ->name('cvs.work-experiences.store');
     Route::delete('cvs/{cv}/work-experiences/{work_experience}', [CvWorkExperienceController::class, 'destroy'])
         ->name('cvs.work-experiences.destroy');
     Route::put('cvs/{cv}/work-experiences/{work_experience}', [CvWorkExperienceController::class, 'update'])
         ->name('cvs.work-experiences.update');
+
+    Route::post('cvs/{cv}/educations',
+        [CvEducationController::class, 'store'])
+        ->name('cvs.educations.store');
+    Route::delete('cvs/{cv}/educations/{education}', [CvEducationController::class, 'destroy'])
+        ->name('cvs.educations.destroy');
+    Route::put('cvs/{cv}/educations/{education}', [CvEducationController::class, 'update'])
+        ->name('cvs.educations.update');
 });
 
 require __DIR__ . '/auth.php';

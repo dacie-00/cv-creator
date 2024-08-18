@@ -17,7 +17,7 @@ class CvWorkExperienceController extends Controller
         $workExperience->save();
 
         return redirect(route('cvs.show', $workExperience->cv_id))
-            ->with('success', __('Added work experience.'));
+            ->with('success', __('Successfully added work experience.'));
     }
 
     public function destroy(Cv $cv, CvWorkExperience $workExperience): RedirectResponse
@@ -25,7 +25,7 @@ class CvWorkExperienceController extends Controller
         $workExperience->delete();
 
         return redirect(route('cvs.show', $cv))
-            ->with('success', __('Deleted work experience.'));
+            ->with('success', __('Successfully deleted work experience.'));
     }
 
     public function update(
@@ -36,6 +36,6 @@ class CvWorkExperienceController extends Controller
         $workExperience->update($request->validated());
 
         return redirect(route('cvs.show', $cv))
-            ->with('success', __('Successfully updated CV.'));
+            ->with('success', __('Successfully updated work experience.'));
     }
 }

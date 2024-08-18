@@ -28,6 +28,10 @@ class Cv extends Model
     public function workExperiences(): HasMany
     {
         return $this->hasMany(CvWorkExperience::class);
+    }
 
+    public function educations(): HasMany
+    {
+        return $this->hasMany(CvEducation::class);
     }
 }
