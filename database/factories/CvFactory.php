@@ -18,7 +18,7 @@ class CvFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory()->create(),
+            'user_id' => User::factory(),
             'full_name' => $this->faker->name(),
             'email' => $this->faker->safeEmail(),
             'phone_number' => $this->faker->phoneNumber(),

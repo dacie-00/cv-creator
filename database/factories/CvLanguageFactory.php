@@ -18,7 +18,7 @@ class CvLanguageFactory extends Factory
     public function definition(): array
     {
         return [
-            'cv_id' => Cv::factory()->create(),
+            'cv_id' => Cv::factory(),
             'language' => $this->faker->languageCode(),
             'level' => $this->faker->randomElement(['A1', 'A2', 'B1', 'B2', 'C1', 'C2']),
         ];

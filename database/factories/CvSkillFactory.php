@@ -18,7 +18,7 @@ class CvSkillFactory extends Factory
     public function definition(): array
     {
         return [
-            'cv_id' => Cv::factory()->create(),
+            'cv_id' => Cv::factory(),
             'skill' => $this->faker->randomElement(['Laravel', 'PHP', 'Leadership', 'Time management']),
         ];
     }

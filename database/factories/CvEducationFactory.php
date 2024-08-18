@@ -18,7 +18,7 @@ class CvEducationFactory extends Factory
     public function definition(): array
     {
         return [
-            'cv_id' => Cv::factory()->create(),
+            'cv_id' => Cv::factory(),
             'school' => $this->faker->word(),
             'level' => $this->faker->randomElement(['Secondary', 'Higher']),
             'degree' => $this->faker->randomElement(['Bachelor', 'Master']),

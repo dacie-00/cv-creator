@@ -18,7 +18,7 @@ class CvWorkExperienceFactory extends Factory
     public function definition(): array
     {
         return [
-            'cv_id' => Cv::factory()->create(),
+            'cv_id' => Cv::factory(),
             'company' => $this->faker->company(),
             'role' => $this->faker->jobTitle(),
             'description' => $this->faker->paragraph(4),
