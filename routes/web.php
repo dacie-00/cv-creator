@@ -3,6 +3,7 @@
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\CvEducationController;
 use App\Http\Controllers\CvLanguageController;
+use App\Http\Controllers\CvSkillController;
 use App\Http\Controllers\CvWorkExperienceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,14 @@ Route::middleware('auth')->group(function () {
         ->name('cvs.languages.destroy');
     Route::put('cvs/{cv}/languages/{language}', [CvLanguageController::class, 'update'])
         ->name('cvs.languages.update');
+
+    Route::post('cvs/{cv}/skills',
+        [CvSkillController::class, 'store'])
+        ->name('cvs.skills.store');
+    Route::delete('cvs/{cv}/skills/{skill}', [CvSkillController::class, 'destroy'])
+        ->name('cvs.skills.destroy');
+    Route::put('cvs/{cv}/skills/{skill}', [CvSkillController::class, 'update'])
+        ->name('cvs.skills.update');
 });
 
 require __DIR__ . '/auth.php';
