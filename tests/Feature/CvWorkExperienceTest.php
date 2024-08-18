@@ -22,6 +22,7 @@ it('can add work experience to cv', function () {
     $response->assertStatus(302)
         ->assertRedirect(route('cvs.show', $cv));
     $this->assertDatabaseHas('cv_work_experiences', [
+        'cv_id' => $cv->id,
         'company' => 'test company',
         'role' => 'tester',
         'description' => 'hello',
@@ -40,6 +41,7 @@ it('can delete work experience from cv', function () {
         ->assertRedirect(route('cvs.show', $workExperience->cv));
     $this->assertDatabaseMissing('cv_work_experiences', [
         'id' => $workExperience->id,
+        'cv_id' => $workExperience->cv->id,
         'company' => $workExperience->company,
     ]);
 });
@@ -61,6 +63,8 @@ it('can update work experience entry', function () {
     $response->assertStatus(302)
         ->assertRedirect(route('cvs.show', $workExperience->cv));
     $this->assertDatabaseHas('cv_work_experiences', [
+        'id' => $workExperience->id,
+        'cv_id' => $workExperience->user->id,
         'company' => 'test company',
         'role' => 'tester',
         'description' => 'hello',

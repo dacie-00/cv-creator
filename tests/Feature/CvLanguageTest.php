@@ -19,6 +19,7 @@ it('can add language to cv', function () {
     $response->assertStatus(302)
         ->assertRedirect(route('cvs.show', $cv));
     $this->assertDatabaseHas('cv_languages', [
+        'cv_id' => $cv->id,
         'language' => 'English',
         'level' => 'C1',
     ]);
@@ -33,6 +34,7 @@ it('can delete language from cv', function () {
     $response->assertStatus(302)
         ->assertRedirect(route('cvs.show', $language->cv));
     $this->assertDatabaseMissing('cv_languages', [
+        'cv_id' => $language->cv->id,
         'language' => $language->language,
         'level' => $language->level,
     ]);
@@ -52,6 +54,8 @@ it('can update language entry', function () {
     $response->assertStatus(302)
         ->assertRedirect(route('cvs.show', $language->cv));
     $this->assertDatabaseHas('cv_languages', [
+        'id' => $language->id,
+        'cv_id' => $language->cv->id,
         'language' => 'English',
         'level' => 'C1',
     ]);

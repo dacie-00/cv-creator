@@ -42,6 +42,8 @@ it('can update a cv', function () {
 
     $response->assertStatus(302)->assertRedirect(route('cvs.show', ['cv' => $cv]));
     $this->assertDatabaseHas('cvs', [
+        'id' => $cv->id,
+        'user_id' => $cv->user->id,
         'full_name' => 'John Doe',
         'email' => 'john@doe.com',
         'phone_number' => '0123456789',

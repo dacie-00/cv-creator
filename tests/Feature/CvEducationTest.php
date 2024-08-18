@@ -22,6 +22,7 @@ it('can add education to cv', function () {
     $response->assertStatus(302)
         ->assertRedirect(route('cvs.show', $cv));
     $this->assertDatabaseHas('cv_education', [
+        'cv_id' => $cv->id,
         'school' => 'Test University',
         'level' => 'Higher',
         'start_date' => '1972-01-01',
@@ -59,6 +60,8 @@ it('can update education entry', function () {
     $response->assertStatus(302)
         ->assertRedirect(route('cvs.show', $education->cv));
     $this->assertDatabaseHas('cv_education', [
+        'id' => $education->id,
+        'cv_id' => $education->cv->id,
         'school' => 'Test University',
         'level' => 'Higher',
         'start_date' => '1972-01-01',
