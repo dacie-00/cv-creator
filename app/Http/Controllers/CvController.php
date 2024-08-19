@@ -41,15 +41,15 @@ class CvController extends Controller
         return redirect(route('cvs.index'))->with('success', __('Successfully deleted CV.'));
     }
 
-    public function edit(): View
+    public function edit(Cv $cv): View
     {
-        return view('cvs/edit');
+        return view('cvs/edit', ['cv' => $cv]);
     }
 
     public function update(Cv $cv, UpdateCvRequest $request): RedirectResponse
     {
         $cv->update($request->validated());
 
-        return redirect(route('cvs.show', $cv))->with('success', __('Successfully updated CV.'));
+        return redirect(route('cvs.edit', $cv))->with('success', __('Successfully updated CV.'));
     }
 }

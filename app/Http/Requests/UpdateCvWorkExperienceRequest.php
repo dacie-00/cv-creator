@@ -22,6 +22,7 @@ class UpdateCvWorkExperienceRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'id' => ['sometimes'],
             'company' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string', 'max:2000'],

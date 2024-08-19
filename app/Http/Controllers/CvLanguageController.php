@@ -35,7 +35,7 @@ class CvLanguageController extends Controller
     ): RedirectResponse {
         $language->update($request->validated());
 
-        return redirect(route('cvs.show', $cv))
+        return redirect(route('cvs.edit', $cv))
             ->with('success', __('Successfully updated language.'));
     }
 }

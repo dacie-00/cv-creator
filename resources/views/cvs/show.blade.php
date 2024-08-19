@@ -6,19 +6,17 @@
     </x-slot>
     <div class="flex flex-col mt-8 items-center">
         <div class="p-12 m-4 space-y-8 bg-slate-100 max-w-5xl rounded-md shadow-md">
-            <h1 class="text-3xl font-bold">
-                {{ $cv->title }}
-            </h1>
+            @include('cvs.partials.title.show')
             <div class="space-x-16 flex">
                 <div class="flex flex-col space-y-8 w-1/2">
-                    @include('cvs.partials.general')
-                    @include('cvs.partials.about')
-                    @include('cvs.partials.skills')
-                    @include('cvs.partials.languages')
+                    @include('cvs.partials.general.show')
+                    @include('cvs.partials.about.show')
+                    @include('cvs.partials.skills.index-show')
+                    @include('cvs.partials.languages.index-show')
                 </div>
                 <div class="flex flex-col space-y-8 w-1/2">
-                    @include('cvs.partials.work-experiences')
-                    @include('cvs.partials.education')
+                    @include('cvs.partials.work-experiences.index-show')
+                    @include('cvs.partials.education.index-show')
                 </div>
             </div>
         </div>

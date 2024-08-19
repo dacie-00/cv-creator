@@ -1,0 +1,1 @@
+<p>- {{ $skill->skill }}</p>

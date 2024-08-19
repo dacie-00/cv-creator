@@ -22,6 +22,7 @@ class UpdateCvSkillRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'id' => ['sometimes'],
             'skill' => ['required', 'string', 'max:255'],
         ];
     }

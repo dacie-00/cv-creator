@@ -24,6 +24,7 @@ class UpdateCvLanguageRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'id' => ['sometimes'],
             'language' => ['required', 'string', 'max:50'],
             'level' => ['required', 'string', 'max:50', Rule::in(CvLanguage::LEVELS)],
         ];

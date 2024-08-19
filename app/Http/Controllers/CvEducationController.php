@@ -38,7 +38,7 @@ class CvEducationController extends Controller
     ): RedirectResponse {
         $education->update($request->validated());
 
-        return redirect(route('cvs.show', $cv))
+        return redirect(route('cvs.edit', $cv))
             ->with('success', __('Successfully updated education.'));
     }
 }

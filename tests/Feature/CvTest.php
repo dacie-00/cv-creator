@@ -33,7 +33,7 @@ it('can update a cv', function () {
     $cv = Cv::factory()->create();
 
     $response = $this->actingAs($cv->user)
-        ->put(route('cvs.update', ['cv' => $cv]), [
+        ->patch(route('cvs.update', ['cv' => $cv]), [
             'full_name' => 'John Doe',
             'email' => 'john@doe.com',
             'phone_number' => '0123456789',

@@ -22,6 +22,7 @@ class UpdateCvEducationRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'id' => ['sometimes'],
             'school' => ['required', 'string', 'max:255'],
             'level' => ['required', 'string', 'max:30'],
             'degree' => ['sometimes', 'string', 'max:30'],

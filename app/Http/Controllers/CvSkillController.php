@@ -35,7 +35,7 @@ class CvSkillController extends Controller
     ): RedirectResponse {
         $skill->update($request->validated());
 
-        return redirect(route('cvs.show', $cv))
+        return redirect(route('cvs.edit', $cv))
             ->with('success', __('Successfully updated skill.'));
     }
 }
