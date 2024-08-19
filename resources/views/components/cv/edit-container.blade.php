@@ -1,5 +1,5 @@
 <div x-data="{ edit: false }"
-     {{ $attributes->merge(['class' => 'hover:bg-red-100']) }}
+     {{ $attributes->merge(['class' => 'hover:bg-red-100 rounded-md']) }}
 >
     <div x-show="edit">
         <form class="text-xl p-4" method="POST" action={{ $action }}>
