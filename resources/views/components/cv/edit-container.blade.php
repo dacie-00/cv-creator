@@ -19,6 +19,7 @@ $id = Uuid::uuid();
 
         </form>
         <div class="flex justify-between">
+            <x-secondary-button type="button" @click="edit = false">Cancel</x-secondary-button>
             @if($canDelete)
                 <form method="POST" action={{ $action }}>
                     @csrf
@@ -26,7 +27,6 @@ $id = Uuid::uuid();
                     <x-danger-button type="submit">Delete</x-danger-button>
                 </form>
             @endif
-            <x-secondary-button type="button" @click="edit = false">Cancel</x-secondary-button>
             <x-primary-button form="{{ $id }}" type="submit">Update</x-primary-button>
         </div>
     </div>
