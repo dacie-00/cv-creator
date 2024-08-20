@@ -23,10 +23,10 @@ class StoreCvRequest extends FormRequest
     {
         return [
             'title' => ['sometimes', 'string', 'max:40'],
-            'full_name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255'],
-            'phone_number' => ['required', 'string', 'max:30'],
-            'address' => ['required', 'string', 'max:255'],
+            'full_name' => ['sometimes', 'string', 'max:255'],
+            'email' => ['sometimes', 'email', 'max:255'],
+            'phone_number' => ['sometimes', 'string', 'max:30'],
+            'address' => ['sometimes', 'string', 'max:255'],
             'about' => ['sometimes', 'string', 'max:2000'],
         ];
     }

@@ -1,6 +1,6 @@
 <div
     x-data="{ expanded: false }"
-    {{ $attributes->merge(['class' => 'p-12 m-4 space-y-8 bg-slate-100 max-w-5xl w-full rounded-md shadow-md']) }}
+    {{ $attributes->merge(['class' => 'px-12 pt-12 pb-6 m-4 space-y-6 bg-slate-100 max-w-5xl w-full rounded-md shadow-md']) }}
 >
     {{ $slot }}
     <div class="flex justify-center">
@@ -9,5 +9,4 @@
             class="las la-angle-down text-center text-4xl opacity-50 hover:opacity-100 transition opacity"
         ></span>
     </div>
-
 </div>

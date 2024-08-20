@@ -11,7 +11,7 @@
                     <h2 class="text-2xl font-bold">{{ $cv->title }}</h2>
                     <p class="text-sm opacity-50">{{ $cv->updated_at }}</p>
                 </div>
-                <div x-show="expanded" x-collapse.duration.400ms.min.50px>
+                <div x-show="expanded" x-collapse.duration.300ms.min.5px>
                     <div class="flex justify-between space-x-16">
                         <p class="max-w-prose">{{ Str::limit($cv->about, 500, '...') }}</p>
                         <div>
@@ -33,5 +33,9 @@
                 </div>
             </x-cv.card>
         @endforeach
+        <form action="{{ route('cvs.store') }}" method="POST">
+            @csrf
+            <x-primary-button type="submit" class="scale-150 my-8">Create New CV</x-primary-button>
+        </form>
     </div>
 </x-app-layout>
