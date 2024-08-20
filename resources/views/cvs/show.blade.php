@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="flex flex-col mt-8 items-center">
-        <div class="p-12 m-4 space-y-8 bg-slate-100 max-w-5xl rounded-md shadow-md w-a4 h-a4 bg-gradient-to-r from-zinc-200 from-50% to-0%">
+        <div class="p-12 m-4 space-y-8 bg-slate-100 max-w-5xl overflow-hidden rounded-md shadow-md w-a4 h-a4 bg-gradient-to-r from-zinc-200 from-50% to-0%">
             @include('cvs.partials.title.show')
             <div class="space-x-16 flex">
                 <div class="flex flex-col space-y-8 w-1/2">
