@@ -16,7 +16,7 @@ class CvSkillController extends Controller
         $skill->cv_id = $cv->id;
         $skill->save();
 
-        return redirect(route('cvs.show', $skill->cv_id))
+        return redirect(route('cvs.edit', $skill->cv_id))
             ->with('success', __('Successfully added skill.'));
     }
 

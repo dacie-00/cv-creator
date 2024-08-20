@@ -1,39 +1,39 @@
-<input type="hidden" name="id" value="{{ $education->id }}">
-@php $redirectHere = $education->id == old('id') @endphp
+<input type="hidden" name="id" value="-1">
+@php $redirectHere = old('id') == -1 @endphp
 
 <x-input-label for="school" :value="__('School')"/>
 <x-text-input name="school"
-              value="{{ $redirectHere ? old('school') : $education->school }}">
+              value="">
 </x-text-input>
 <x-input-error :messages="$redirectHere ? $errors->get('school') : ''" class="mt-2"/>
 
 <x-input-label for="level" :value="__('Level')"/>
 <x-text-input name="level"
-              value="{{ $redirectHere ? old('level') : $education->level }}">
+              value="">
 </x-text-input>
 <x-input-error :messages="$redirectHere ? $errors->get('level') : ''" class="mt-2"/>
 
 <x-input-label for="degree" :value="__('Degree')"/>
 <x-text-input name="degree"
-              value="{{ $redirectHere ? old('degree') : $education->degree }}">
+              value="">
 </x-text-input>
 <x-input-error :messages="$redirectHere ? $errors->get('degree') : ''" class="mt-2"/>
 
 <x-input-label for="field" :value="__('Field')"/>
 <x-text-input name="field"
-              value="{{ $redirectHere ? old('field') : $education->field }}">
+              value="">
 </x-text-input>
 <x-input-error :messages="$redirectHere ? $errors->get('field') : ''" class="mt-2"/>
 
 <x-input-label for="start_date" :value="__('Start date')"/>
 <x-text-input name="start_date"
-              value="{{ $redirectHere ? old('start_date') : $education->start_date }}">
+              value="">
 </x-text-input>
 <x-input-error :messages="$redirectHere ? $errors->get('start_date') : ''" class="mt-2"/>
 
 <x-input-label for="end_date" :value="__('End date')"/>
 <x-text-input name="end_date"
-              value="{{ $redirectHere ? old('end_date') : $education->end_date }}">
+              value="">
 </x-text-input>
 <x-input-error :messages="$redirectHere ? $errors->get('end_date') : ''" class="mt-2"/>
 

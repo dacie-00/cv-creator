@@ -19,7 +19,7 @@ class CvEducationController extends Controller
         $education->cv_id = $cv->id;
         $education->save();
 
-        return redirect(route('cvs.show', $education->cv_id))
+        return redirect(route('cvs.edit', $education->cv_id))
             ->with('success', __('Successfully added education.'));
     }
 

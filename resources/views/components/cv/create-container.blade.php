@@ -11,13 +11,8 @@
 
         </form>
         <div class="flex justify-between">
-            <form method="POST" action={{ $action }}>
-                @csrf
-                @method('DELETE')
-                <x-danger-button type="submit">Delete</x-danger-button>
-            </form>
             <x-danger-button type="button" @click="edit = false">Cancel</x-danger-button>
-            <x-primary-button form="{{ $action }}" type="submit">Update</x-primary-button>
+            <x-primary-button form="{{ $action }}" type="submit">Add</x-primary-button>
         </div>
     </div>
     <div @click="edit = true" x-show="!edit">

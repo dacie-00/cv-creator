@@ -16,7 +16,7 @@ class CvLanguageController extends Controller
         $language->cv_id = $cv->id;
         $language->save();
 
-        return redirect(route('cvs.show', $language->cv_id))
+        return redirect(route('cvs.edit', $language->cv_id))
             ->with('success', __('Successfully added language.'));
     }
 

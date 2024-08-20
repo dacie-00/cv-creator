@@ -16,7 +16,7 @@ class CvWorkExperienceController extends Controller
         $workExperience->cv_id = $cv->id;
         $workExperience->save();
 
-        return redirect(route('cvs.show', $workExperience->cv_id))
+        return redirect(route('cvs.edit', $workExperience->cv_id))
             ->with('success', __('Successfully added work experience.'));
     }
 

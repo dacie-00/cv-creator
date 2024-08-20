@@ -1,6 +1,3 @@
-@method("PATCH")
-
-
 <x-input-label for="full_name" :value="__('Full Name')"/>
 <x-text-input name="full_name" value="{{ old('full_name') ?? $cv->full_name }}"></x-text-input>
 <x-input-error :messages="$errors->get('full_name')" class="mt-2"/>
