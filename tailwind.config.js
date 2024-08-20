@@ -14,6 +14,12 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            width: {
+                a4: '210mm',
+            },
+            height: {
+                a4: '297mm',
+            },
         },
     },
 
