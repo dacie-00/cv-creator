@@ -27,7 +27,7 @@ class CvEducationController extends Controller
     {
         $education->delete();
 
-        return redirect(route('cvs.show', $cv))
+        return redirect(route('cvs.edit', $cv))
             ->with('success', __('Successfully deleted education.'));
     }
 
