@@ -1,9 +1,5 @@
 <div class="text-xl">
     <div>
-        <span class="text-xl las la-user"></span>
-        {{ $cv->full_name }}
-    </div>
-    <div>
         <span class="text-xl las la-at"></span>
         {{ $cv->email }}
     </div>
