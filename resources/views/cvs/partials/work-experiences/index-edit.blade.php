@@ -14,7 +14,7 @@
     </ul>
     <x-cv.create-container action="{{ route('cvs.work-experiences.store', $cv) }}" method="POST">
         <x-slot name="show">
-            <p class="text-blue-500">Add new language</p>
+            <p class="text-blue-500">Add experience</p>
         </x-slot>
         <x-slot name="edit">
             @include('cvs.partials.work-experiences.create')

@@ -6,7 +6,7 @@
     </x-slot>
     <div class="flex flex-col mt-8 items-center">
         <div class="p-12 m-4 space-y-8 bg-slate-100 max-w-5xl rounded-md shadow-xl bg-gradient-to-r from-zinc-200 from-50% to-0%">
-            <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH">
+            <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH" :canDelete="false">
                 <x-slot name="show">
                     @include('cvs.partials.title.show')
                 </x-slot>
@@ -16,7 +16,7 @@
             </x-cv.edit-container>
             <div class="space-x-16 flex">
                 <div class="flex flex-col space-y-8 w-1/2">
-                    <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH">
+                    <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH" :canDelete="false">
                         <x-slot name="show">
                             @include('cvs.partials.general.show')
                         </x-slot>
@@ -24,7 +24,7 @@
                             @include('cvs.partials.general.edit')
                         </x-slot>
                     </x-cv.edit-container>
-                    <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH">
+                    <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH" :canDelete="false">
                         <x-slot name="show">
                             @include('cvs.partials.about.show')
                         </x-slot>
