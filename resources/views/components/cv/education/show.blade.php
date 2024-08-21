@@ -1,8 +1,13 @@
+@php use Carbon\Carbon; @endphp
 @props(['education' => null])
 
 <li class="mb-6">
-    <p>{{ $education->degree }}</p>
-    <p>{{ $education->field }}</p>
+    @if($education->degree)
+        <p><span class="text-sm opacity-50 italic">Degree - </span>{{ $education->degree }}</p>
+    @endif
+    @if($education->field)
+        <p><span class="text-sm opacity-50 italic">Field - </span>{{ $education->field }}</p>
+    @endif
     <p>
         {{ $education->school }}
         <span class="text-sm opacity-50 italic">{{ $education->level }} Education</span>
