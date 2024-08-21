@@ -19,7 +19,6 @@ https://github.com/user-attachments/assets/3589c184-3f57-46cc-a544-3c7ce76f5926
 * PHP >= 8.3
 * Composer >= 2.7.2
 * Docker
-* 
 
 ## First time setup
 
