@@ -22,8 +22,11 @@ class CvController extends Controller
         return view('cvs/create');
     }
 
-    public function show(Cv $cv): View
+    public function show(string $id): View
     {
+        $cv = Cv::query()->where('id', $id)
+            ->with(['skills', 'languages', 'workExperiences', 'educations'])
+            ->first();
         return view('cvs/show', ['cv' => $cv]);
     }
 
