@@ -26,11 +26,11 @@ https://github.com/user-attachments/assets/3589c184-3f57-46cc-a544-3c7ce76f5926
 * ```composer install```
 * Create .env based on .env.example in root directory
 * ```./vendor/bin/sail up```
-* ```php artisan migrate```
-* ```php artisan storage:link```
-* ```php artisan key:generate```
-* ```npm install```
-* ```npm run build```
+* ```./vendor/bin/sail artisan migrate```
+* ```./vendor/bin/sail artisan storage:link```
+* ```./vendor/bin/sail artisan key:generate```
+* ```./vendor/bin/sail npm install```
+* ```./vendor/bin/sail npm run dev```
 
 ## Seeding DB with fake data
 ```php artisan db:seed```
