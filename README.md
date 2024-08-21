@@ -33,7 +33,7 @@ https://github.com/user-attachments/assets/3589c184-3f57-46cc-a544-3c7ce76f5926
 * ```./vendor/bin/sail npm run dev```
 
 ## Seeding DB with fake data
-```php artisan db:seed```
+```./vendor/bin/sail artisan db:seed```
 Test user - 
     Email - test@test.test
     Password - testtest
