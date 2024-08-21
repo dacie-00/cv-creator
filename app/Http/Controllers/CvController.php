@@ -51,7 +51,7 @@ class CvController extends Controller
         $validated = $request->validated();
         if ($image = $request->file('image')) {
             Storage::disk('local')->putFileAs('public/', $image, $cv->id . '.' . $image->guessClientExtension());
-            Arr::set($validated, 'image', $cv->id . $image->getExtension());
+            Arr::set($validated, 'image', $cv->id . '.' . $image->guessClientExtension());
         }
         $cv->update($validated);
 
