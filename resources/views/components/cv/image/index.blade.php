@@ -4,7 +4,8 @@
 ])
 
 @if ($type === 'edit')
-    <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH" :canDelete="false" enctype="multipart/form-data">
+    <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH" :canDelete="false"
+                         enctype="multipart/form-data">
         <x-slot name="show">
             <x-cv.image.show :cv="$cv"></x-cv.image.show>
         </x-slot>

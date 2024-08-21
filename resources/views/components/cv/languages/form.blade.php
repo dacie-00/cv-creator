@@ -13,15 +13,17 @@
 
 
 <x-input-label for="language">
-    {{ __('Language') }}<x-required-star/>
+    {{ __('Language') }}
+    <x-required-star/>
 </x-input-label>
 <x-text-input name="language" required maxlength="50"
-    value="{{ $type === 'create' ? '' : ($redirectHere ? old('language') : $language->language) }}"
+              value="{{ $type === 'create' ? '' : ($redirectHere ? old('language') : $language->language) }}"
 ></x-text-input>
 <x-input-error :messages="$redirectHere ? $errors->get('language') : ''" class="mt-2"/>
 
 <x-input-label for="level">
-    {{ __('Level') }}<x-required-star/>
+    {{ __('Level') }}
+    <x-required-star/>
 </x-input-label>
 @php $selected = $type === 'create' ? '' : ($redirectHere ? old('level') : $language->level) @endphp
 <x-select-input name="level" required maxlength="50">

@@ -8,6 +8,7 @@ use App\Models\CvLanguage;
 use App\Models\CvSkill;
 use App\Models\CvWorkExperience;
 use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $user = User::factory()->create([
             'name' => 'test',
             'email' => 'test@test.test',
-            'password' => 'testtest'
+            'password' => 'testtest',
         ]);
 
         $cvs = Cv::factory(3)->create(['user_id' => $user->id]);

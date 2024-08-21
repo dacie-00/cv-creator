@@ -23,7 +23,7 @@ class CvLanguage extends Model
         self::LEVEL_B1,
         self::LEVEL_B2,
         self::LEVEL_C1,
-        self::LEVEL_C2
+        self::LEVEL_C2,
     ];
 
     protected $fillable = [

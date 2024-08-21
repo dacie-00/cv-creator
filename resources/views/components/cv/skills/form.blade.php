@@ -13,10 +13,11 @@
 
 
 <x-input-label for="skill">
-    {{ __('Skill') }}<x-required-star/>
+    {{ __('Skill') }}
+    <x-required-star/>
 </x-input-label>
 <x-text-input name="skill" required maxlength="255"
-    value="{{ $type === 'create' ? '' : ($redirectHere ? old('skill') : $skill->skill) }}"
+              value="{{ $type === 'create' ? '' : ($redirectHere ? old('skill') : $skill->skill) }}"
 ></x-text-input>
 <x-input-error :messages="$redirectHere ? $errors->get('skill') : ''" class="mt-2"/>
 

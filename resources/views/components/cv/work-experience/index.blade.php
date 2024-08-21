@@ -8,7 +8,8 @@
         <h2 class="text-2xl font-bold mb-2">Experience</h2>
         <ul>
             @foreach($cv->workExperiences as $experience)
-                <x-cv.edit-container action="{{ route('cvs.work-experiences.update', [$cv, $experience]) }}" method="PUT">
+                <x-cv.edit-container action="{{ route('cvs.work-experiences.update', [$cv, $experience]) }}"
+                                     method="PUT">
                     <x-slot name="show">
                         <x-cv.work-experience.show :experience="$experience"></x-cv.work-experience.show>
                     </x-slot>

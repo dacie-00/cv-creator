@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCvEducationRequest;
-use App\Http\Requests\StoreCvWorkExperienceRequest;
 use App\Http\Requests\UpdateCvEducationRequest;
-use App\Http\Requests\UpdateCvWorkExperienceRequest;
 use App\Models\Cv;
 use App\Models\CvEducation;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class CvEducationController extends Controller
 {

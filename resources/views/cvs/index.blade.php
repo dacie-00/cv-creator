@@ -26,7 +26,8 @@
                     </div>
                     <div class="pt-8 flex justify-between items-center">
                         <x-primary-button @click="location.href='{{ route('cvs.edit', $cv) }}'">Edit</x-primary-button>
-                        <x-primary-button @click="location.href='{{ route('cvs.show', $cv) }}'">View Full</x-primary-button>
+                        <x-primary-button @click="location.href='{{ route('cvs.show', $cv) }}'">View Full
+                        </x-primary-button>
                         <form action="{{ route('cvs.destroy', $cv) }}" method="POST">
                             @csrf
                             @method('DELETE')

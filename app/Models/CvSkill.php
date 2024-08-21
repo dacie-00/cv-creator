@@ -11,7 +11,7 @@ class CvSkill extends Model
     use HasFactory;
 
     protected $fillable = [
-        'skill'
+        'skill',
     ];
 
     protected $touches = ['cv'];

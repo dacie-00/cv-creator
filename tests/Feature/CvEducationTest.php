@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 use App\Models\Cv;
 use App\Models\CvEducation;
-use App\Models\CvWorkExperience;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
