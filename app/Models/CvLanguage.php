@@ -31,6 +31,8 @@ class CvLanguage extends Model
         'level',
     ];
 
+    protected $touches = ['cv'];
+
     public function cv(): BelongsTo
     {
         return $this->belongsTo(Cv::class);

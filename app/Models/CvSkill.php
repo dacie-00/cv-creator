@@ -14,6 +14,8 @@ class CvSkill extends Model
         'skill'
     ];
 
+    protected $touches = ['cv'];
+
     public function cv(): BelongsTo
     {
         return $this->belongsTo(Cv::class);

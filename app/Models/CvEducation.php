@@ -19,6 +19,8 @@ class CvEducation extends Model
         'end_date',
     ];
 
+    protected $touches = ['cv'];
+
     public function cv(): BelongsTo
     {
         return $this->belongsTo(Cv::class);
