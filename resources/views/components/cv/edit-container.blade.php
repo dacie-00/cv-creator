@@ -4,13 +4,14 @@ $id = Uuid::uuid();
 @props([
     'action' => '',
     'method' => 'POST',
-    'canDelete' => true
+    'canDelete' => true,
+    'enctype' => 'application/x-www-form-urlencoded',
 ])
 <div x-data="{ edit: false }"
     {{ $attributes->merge(['class' => 'hover:bg-red-100 rounded-md']) }}
 >
     <div class="text-xl p-4" x-show="edit">
-        <form id="{{ $id }}" method="POST" action={{ $action }}>
+        <form id="{{ $id }}" method="POST" action="{{ $action }}" enctype="{{ $enctype }}">
             @method($method)
             @csrf
             <div class="mb-6">

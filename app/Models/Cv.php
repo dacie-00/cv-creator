@@ -20,6 +20,7 @@ class Cv extends Model
         'phone_number',
         'address',
         'about',
+        'image',
     ];
 
     public function user(): BelongsTo

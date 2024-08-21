@@ -28,6 +28,7 @@ class UpdateCvRequest extends FormRequest
             'phone_number' => ['sometimes', 'string', 'max:30'],
             'address' => ['sometimes', 'string', 'max:255'],
             'about' => ['sometimes', 'string', 'max:2000'],
+            'image' => ['sometimes', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
         ];
     }
 }

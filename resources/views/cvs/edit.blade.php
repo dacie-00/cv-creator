@@ -9,6 +9,7 @@
             <div class="space-x-16 flex">
                 <div class="flex flex-col space-y-8 w-1/2">
                     <x-cv.name.index :cv="$cv" type="edit"></x-cv.name.index>
+                    <x-cv.image.index :cv="$cv" type="edit"></x-cv.image.index>
                     <x-cv.general.index :cv="$cv" type="edit"></x-cv.general.index>
                     <x-cv.about.index :cv="$cv" type="edit"></x-cv.about.index>
                     <x-cv.skills.index :cv="$cv" type="edit"></x-cv.skills.index>

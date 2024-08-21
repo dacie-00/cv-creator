@@ -6,6 +6,8 @@ use App\Http\Requests\StoreCvRequest;
 use App\Http\Requests\UpdateCvRequest;
 use App\Models\Cv;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 
 class CvController extends Controller
@@ -48,7 +50,12 @@ class CvController extends Controller
 
     public function update(Cv $cv, UpdateCvRequest $request): RedirectResponse
     {
-        $cv->update($request->validated());
+        $validated = $request->validated();
+        if ($image = $request->file('image')) {
+            Storage::disk('local')->putFileAs('public/', $image, $cv->id . '.' . $image->guessClientExtension());
+            Arr::set($validated, 'image', $cv->id . $image->getExtension());
+        }
+        $cv->update($validated);
 
         return redirect(route('cvs.edit', $cv))->with('success', __('Successfully updated CV.'));
     }
