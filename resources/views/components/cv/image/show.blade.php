@@ -1,4 +1,4 @@
-@props(['cv'])
+@props(['cv', 'type' => 'edit'])
 
 <div class="w-1/2">
     @if ($cv->image)
@@ -6,6 +6,8 @@
              class="rounded-full aspect-square size-fit object-cover"
         >
     @else
-        <p>No image set!</p>
+        @if($type === 'edit')
+            <p>No image set!</p>
+        @endif
     @endif
 </div>
