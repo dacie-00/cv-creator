@@ -17,11 +17,6 @@ class CvController extends Controller
         return view('cvs/index', ['cvs' => Cv::all()]);
     }
 
-    public function create(): View
-    {
-        return view('cvs/create');
-    }
-
     public function show(string $id): View
     {
         $cv = Cv::query()->where('id', $id)
