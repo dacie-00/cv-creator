@@ -6,7 +6,7 @@
                     {{ __('Editing CV - \'' . $cv->title . '\'') }}
                 </x-slot>
                 <x-slot name="edit">
-                    @include('cvs.partials.title.edit')
+                    <x-cv.title.form :cv="$cv"></x-cv.title.form>
                 </x-slot>
             </x-cv.edit-container>
         </h2>
@@ -17,34 +17,34 @@
                 <div class="flex flex-col space-y-8 w-1/2">
                     <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH" :canDelete="false">
                         <x-slot name="show">
-                            @include('cvs.partials.name.show')
+                            <x-cv.name.show :cv="$cv"></x-cv.name.show>
                         </x-slot>
                         <x-slot name="edit">
-                            @include('cvs.partials.name.edit')
+                            <x-cv.name.form :cv="$cv"></x-cv.name.form>
                         </x-slot>
                     </x-cv.edit-container>
                     <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH" :canDelete="false">
                         <x-slot name="show">
-                            @include('cvs.partials.general.show')
+                            <x-cv.general.show :cv="$cv"></x-cv.general.show>
                         </x-slot>
                         <x-slot name="edit">
-                            @include('cvs.partials.general.edit')
+                            <x-cv.general.form :cv="$cv"></x-cv.general.form>
                         </x-slot>
                     </x-cv.edit-container>
                     <x-cv.edit-container action="{{ route('cvs.update', $cv) }}" method="PATCH" :canDelete="false">
                         <x-slot name="show">
-                            @include('cvs.partials.about.show')
+                            <x-cv.about.show :cv="$cv"></x-cv.about.show>
                         </x-slot>
                         <x-slot name="edit">
-                            @include('cvs.partials.about.edit')
+                            <x-cv.about.form :cv="$cv"></x-cv.about.form>
                         </x-slot>
                     </x-cv.edit-container>
-                    @include('cvs.partials.skills.index-edit')
-                    @include('cvs.partials.languages.index-edit')
+                    <x-cv.skills.index :cv="$cv" type="edit"></x-cv.skills.index>
+                    <x-cv.languages.index :cv="$cv" type="edit"></x-cv.languages.index>
                 </div>
                 <div class="flex flex-col space-y-8 w-1/2">
-                    @include('cvs.partials.work-experiences.index-edit')
-                    @include('cvs.partials.education.index-edit')
+                    <x-cv.work-experience.index :cv="$cv" type="edit"></x-cv.work-experience.index>
+                    <x-cv.education.index :cv="$cv" type="edit"></x-cv.education.index>
                 </div>
             </div>
         </div>

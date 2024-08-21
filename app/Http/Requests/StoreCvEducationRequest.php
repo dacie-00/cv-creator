@@ -24,10 +24,10 @@ class StoreCvEducationRequest extends FormRequest
         return [
             'school' => ['required', 'string', 'max:255'],
             'level' => ['required', 'string', 'max:30'],
-            'degree' => ['sometimes', 'string', 'max:30'],
-            'field' => ['sometimes', 'string', 'max:100'],
-            'start_date' => ['sometimes', 'date'],
-            'end_date' => ['sometimes', 'date'],
+            'degree' => ['nullable', 'string', 'max:30'],
+            'field' => ['nullable', 'string', 'max:100'],
+            'start_date' => ['nullable', 'date'],
+            'end_date' => ['nullable', 'date'],
         ];
     }
 }
