@@ -4,8 +4,11 @@
             {{ __('Your CVs') }}
         </h2>
     </x-slot>
-    <div class="flex flex-col mt-8 items-center">
-        @foreach($cvs as $cv)
+    <div class="text-2xl text-center my-4">
+        <x-notification></x-notification>
+    </div>
+    <div class="flex flex-col items-center">
+        @foreach($cvs->reverse() as $cv)
             <x-cv.card>
                 <div class="flex justify-between items-center">
                     <h2 class="text-2xl font-bold">{{ $cv->title }}</h2>
