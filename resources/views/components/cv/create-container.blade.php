@@ -11,7 +11,7 @@
 
         </form>
         <div class="flex justify-between">
-            <x-danger-button type="button" @click="edit = false">Cancel</x-danger-button>
+            <x-secondary-button type="button" @click="edit = false">Cancel</x-secondary-button>
             <x-primary-button form="{{ $action }}" type="submit">Add</x-primary-button>
         </div>
     </div>
