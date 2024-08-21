@@ -24,7 +24,7 @@ class StoreCvWorkExperienceRequest extends FormRequest
         return [
             'company' => ['required', 'string', 'max:255'],
             'role' => ['required', 'string', 'max:255'],
-            'description' => ['nullable', 'string', 'max:2000'],
+            'description' => ['nullable', 'string', 'max:1000'],
             'start_date' => ['nullable', 'date'],
             'end_date' => ['nullable', 'date'],
         ];

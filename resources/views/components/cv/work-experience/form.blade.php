@@ -30,10 +30,8 @@
 <x-input-error :messages="$redirectHere ? $errors->get('role') : ''" class="mt-2"/>
 
 
-<x-input-label for="description">
-    {{ __('Description') }}<x-required-star/>
-</x-input-label>
-<x-text-area class="w-full" name="description" required maxlength="2000">
+<x-input-label for="description" :value="__('Description')"/>
+<x-text-area class="w-full" name="description" required maxlength="1000">
   {{ $type === 'create' ? '' : ($redirectHere ? old('description') : $experience->description) }}
 </x-text-area>
 <x-input-error :messages="$redirectHere ? $errors->get('description') : ''" class="mt-2"/>

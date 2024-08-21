@@ -22,12 +22,13 @@ class StoreCvRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['sometimes', 'string', 'max:40'],
+            'title' => ['sometimes', 'string', 'max:100'],
             'full_name' => ['sometimes', 'string', 'max:255'],
             'email' => ['sometimes', 'email', 'max:255'],
             'phone_number' => ['sometimes', 'string', 'max:30'],
             'address' => ['sometimes', 'string', 'max:255'],
-            'about' => ['sometimes', 'string', 'max:2000'],
+            'about' => ['sometimes', 'string', 'max:1000'],
+            'image' => ['sometimes', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
         ];
     }
 }

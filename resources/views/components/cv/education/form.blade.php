@@ -24,7 +24,7 @@
     {{ __('Level') }}<x-required-star/>
 </x-input-label>
 @php $selected = $type === 'create' ? '' : ($redirectHere ? old('level') : $education->level) @endphp
-<x-select-input name="level" required>
+<x-select-input name="level" required maxlength="30">
     <option value="Basic" @selected($selected === "Basic")>Basic</option>
     <option value="Secondary" @selected($selected === "Secondary")>Secondary</option>
     <option value="Higher" @selected($selected === "Higher")>Higher</option>
